@@ -1,14 +1,20 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
-  </div>
+    <div id="app">
+        <img src="./assets/logo.png">
+        <router-view/>
+        <svg-icon></svg-icon>
+    </div>
+
 </template>
 
 <script>
-export default {
-  name: 'app'
-}
+    import svgIcon from './components/common/svg';
+    export default {
+        //name: 'app'
+        components:{
+            svgIcon
+        }
+    }
 </script>
 
 <style>
