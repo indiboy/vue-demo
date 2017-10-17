@@ -74,6 +74,8 @@ const webpackConfig = merge(baseWebpackConfig, {
       template: 'index.html',
       // 是否注入 html
       inject: true,
+      //生产环境设置icon
+      favicon: 'src/assets/logo.png',
       // 压缩的方式
       minify: {
         removeComments: true,

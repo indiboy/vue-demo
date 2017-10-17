@@ -40,7 +40,9 @@ module.exports = merge(baseWebpackConfig, {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html',
-      inject: true
+      inject: true,
+      //开发环境设置icon
+      favicon: 'src/assets/logo.png'
     }),
     new FriendlyErrorsPlugin()
   ]
