@@ -3,8 +3,8 @@
     <slot name='logo'></slot>
     <slot name='search'></slot>
     <section class="head_goback" v-if="goBack" @click="$router.go(-1)">
-      <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg">
-        <polyline points="40,50 0,25 40,0" style="fill:none;stroke:rgb(255,255,255);stroke-width:4"/>
+      <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+        <polyline points="30,40 0,20 30,0" style="fill:none;stroke:rgb(255,255,255);stroke-width:4"/>
       </svg>
     </section>
     <router-link :to="userInfo? '/profile':'/login'" v-if='signinUp' class="head_login">
@@ -55,20 +55,21 @@
     .head_goback{
         left: 0.4rem;
         @include wh(0.6rem,1rem);
-        line-height: 2.2rem;
+        @include ct;
         margin-left: 0.4rem;
     }
     .head_login{
         right: 0.55rem;
         @include sc(0.65rem,#fff);
         @include ct;
+        text-decoration: none;
         .login_span{
-            color: #fff;
-        }
-        .user_avatar{
-            fill: #fff;
-            @include wh(.8rem, .8rem);
-        }
+              color: #fff;
+          }
+          .user_avatar{
+              fill: #fff;
+              @include wh(.8rem, .8rem);
+          }
     }
     .title_head{
         @include center;
