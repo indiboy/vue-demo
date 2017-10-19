@@ -1,7 +1,16 @@
 <template>
-    <div id="app">
+    <div>
+        <transtion name="router-fade" mode="out-in">
+            <keep-alive>
+                <router-view v-if="$route.meta.keepAlive"></router-view>
+            </keep-alive>
+        </transtion>
+        <transtion name="router-fade" mode="out-in">
+            <keep-alive>
+                <router-view v-if="!$route.meta.keepAlive"></router-view>
+            </keep-alive>
+        </transtion>
         <img src="./assets/logo.png">
-        <router-view/>
         <svg-icon></svg-icon>
     </div>
 
@@ -12,18 +21,17 @@
     export default {
         //name: 'app'
         components:{
-            svgIcon
+          svgIcon
         }
     }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 1.95rem;
-}
+<style lang="scss" rel="stylesheet/scss">
+    @import './style/common';
+    .router-fade-enter-active, .router-fade-leave-active {
+        transition: opacity .3s;
+    }
+    .router-fade-enter, .router-fade-leave-to {
+        opacity: 0;
+    }
 </style>
