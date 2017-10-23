@@ -1,13 +1,13 @@
 <template>
-    <div>app
+    <div>app{{count}}{{console}}
         <transtion name="router-fade" mode="out-in">
             <keep-alive>
-                <router-view v-if="$route.meta.keepAlive"></router-view>
+                <router-view v-if="$route.meta.keepAlive">11</router-view>
             </keep-alive>
         </transtion>
         <transtion name="router-fade" mode="out-in">
             <keep-alive>
-                <router-view v-if="!$route.meta.keepAlive"></router-view>
+                <router-view v-if="!$route.meta.keepAlive">22</router-view>
             </keep-alive>
         </transtion>
         <img src="./assets/logo.png">
@@ -18,10 +18,23 @@
 
 <script>
     import svgIcon from './components/common/svg';
+    import { mapState } from 'vuex'
     export default {
-        //name: 'app'
+        name: 'app',
         components:{
           svgIcon
+        },
+        computed:{
+            ...mapState({
+               count:state => state.count,
+            }),
+            count(){
+                /*在子组件中获取state用this.$store*/
+                return this.$store.state.count
+            },
+            console(){
+              return this.count
+            }
         }
     }
 </script>

@@ -1,9 +1,17 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+
+
+/*import App from '@/App'
 import head from '@/components/header/head'
 import foot from '@/components/footer/foot'
-import App from '@/App'
+import HelloWorld from '@/components/HelloWorld'*/
+
+/*按需加载*/
+const App = r => require.ensure([], () => r(require('@/App')), 'chunkname1')
+const head = r => require.ensure([], () => r(require('@/components/header/head')), 'chunkname2')
+const foot = r => require.ensure([], () => r(require('@/components/footer/foot')), 'chunkname3')
+const HelloWorld = r => require.ensure([], () => r(require('@/components/HelloWorld')), 'chunkname4')
 
 Vue.use(Router)
 
@@ -28,7 +36,9 @@ export default new Router({
       {
         path: '/',
         name: 'app',
-        component: App
+        component: App,
+        /*TODO*/
+        meta:{keepAlive:true}
       }
   ]
 })
