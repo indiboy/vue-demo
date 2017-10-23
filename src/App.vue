@@ -18,6 +18,7 @@
 
 <script>
     import svgIcon from './components/common/svg';
+    /*获取多个状态使用mapstate,*/
     import { mapState } from 'vuex'
     export default {
         name: 'app',
@@ -25,16 +26,24 @@
           svgIcon
         },
         computed:{
-            ...mapState({
-               count:state => state.count,
-            }),
             count(){
-                /*在子组件中获取state用this.$store*/
-                return this.$store.state.count
+              /*在子组件中获取state用this.$store*/
+//              return this.$store.state.todos
+              alert(this.$store.getters.doneTodos)
+              return this.$store.getters.doneTodos
             },
+
+
+            /*...mapstate可以在组件中直接使用this调用*/
+            ...mapState({
+                count:function (state) {
+                    return state.count
+                }
+            }),
             console(){
-              return this.count
+                return this.count
             }
+
         }
     }
 </script>
