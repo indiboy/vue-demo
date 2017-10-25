@@ -46,8 +46,8 @@ const state = {
 export default new Vuex.Store({
   state,
   getters:{
-    doneTodos: state => {
-      return state.todos.filter(todo => todo.done)
+    doneTodos: function (state) {
+        return state.todos.filter(todo => todo.done)
     }
   }
   // actions,

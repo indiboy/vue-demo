@@ -1,5 +1,5 @@
 <template>
-    <div>app{{count}}{{console}}
+    <div>app{{count555}}{{console}}
         <transtion name="router-fade" mode="out-in">
             <keep-alive>
                 <router-view v-if="$route.meta.keepAlive">11</router-view>
@@ -26,11 +26,10 @@
           svgIcon
         },
         computed:{
-            count(){
+            count555(){
               /*在子组件中获取state用this.$store*/
 //              return this.$store.state.todos
-              alert(this.$store.getters.doneTodos)
-              return this.$store.getters.doneTodos
+              return this.$store.getters.doneTodos[0].text
             },
 
 
