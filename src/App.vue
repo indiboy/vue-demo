@@ -1,15 +1,15 @@
 <template>
     <div>app{{count555}}{{console}}
-        <transtion name="router-fade" mode="out-in">
+        <transition name="router-fade" mode="out-in">
             <keep-alive>
                 <router-view v-if="$route.meta.keepAlive">11</router-view>
             </keep-alive>
-        </transtion>
-        <transtion name="router-fade" mode="out-in">
+        </transition>
+        <transition name="router-fade" mode="out-in">
             <keep-alive>
                 <router-view v-if="!$route.meta.keepAlive">22</router-view>
             </keep-alive>
-        </transtion>
+        </transition>
         <img src="./assets/logo.png">
         <svg-icon></svg-icon>
     </div>

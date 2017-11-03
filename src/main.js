@@ -5,7 +5,10 @@ import router from './router'
 import store from './store'
 import './config/rem'
 import FastClick from 'fastclick'
-
+import YDUI from 'vue-ydui';
+Vue.use(YDUI);
+import 'vue-ydui/dist/ydui.rem.css';
+/* 使用px：import 'vue-ydui/dist/ydui.px.css'; */
 if ('addEventListener' in document) {
   document.addEventListener('DOMContentLoaded', function() {
     FastClick.attach(document.body);
@@ -17,7 +20,7 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   router,
-  store
+  store,
   // template: '<App/>',
   // components: { App }
 }).$mount('#app')

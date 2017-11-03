@@ -119,7 +119,7 @@
 <script>
 
   export default {
-
+      name:'svg'
   }
 
 </script>

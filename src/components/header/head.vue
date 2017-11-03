@@ -20,11 +20,13 @@
     <slot name="msite-title"></slot>
     <slot name="changecity"></slot>
     <slot name="changeLogin"></slot>
+
   </header>
 </template>
 
 <script>
 //    import {mapState, mapActions} from 'vuex'
+
     export default {
         data () {
             return {
