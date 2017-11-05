@@ -1,42 +1,21 @@
 <template>
-  <div>
-  <yd-navbar title="NavBar"></yd-navbar>
-    <yd-slider autoplay="3000" class="ooo">
-      <yd-slider-item>
-        <a href="http://www.ydcss.com">
-          <img src="http://static.ydcss.com/uploads/ydui/1.jpg">
-        </a>
-      </yd-slider-item>
-      <yd-slider-item>
-        <a href="http://www.ydcss.com">
-          <img src="http://static.ydcss.com/uploads/ydui/2.jpg">
-        </a>
-      </yd-slider-item>
-      <yd-slider-item>
-        <a href="http://www.ydcss.com">
-          <img src="http://static.ydcss.com/uploads/ydui/3.jpg">
-        </a>
-      </yd-slider-item>
-    </yd-slider>
-  <yd-list theme=3>
-    <yd-list-item v-for="item, key in list" :key="key">
-      <img slot="img" :src="item.img">
-      <span slot="title">{{item.title}}</span>
-      <yd-list-other slot="other">
-        <div>
-          <span class="demo-list-price"><em>¥</em>{{item.price}}</span>
-          <span class="demo-list-del-price">¥{{item.w_price}}</span>
-        </div>
-        <div>content</div>
-      </yd-list-other>
-    </yd-list-item>
-
-  </yd-list>
-    <yd-datetime style="border:1px solid #000;height: 50px;line-height: 50px;text-align: center;" v-model="datetime0"></yd-datetime>
-    <yd-button size="large" type="primary" @click.native="show1 = true">打开</yd-button>
-    <yd-keyboard v-model="show1" :callback="done1" ref="keyboardDemo1"></yd-keyboard>
-    <yd-tabbar class="foot">
-      <yd-tabbar-item title="首页" link="#" @click.native="changtheme()">
+  <div>{{teststore[0].id}}
+    <yd-button type="primary">primary</yd-button>
+    <yd-button type="danger">danger</yd-button>
+    <yd-button type="warning">warning</yd-button>
+    <yd-button type="hollow" @click.native="changtheme()">test</yd-button>
+    <yd-button type="disabled" disabled>disabled</yd-button>
+    <yd-countup
+      endnum="1200"
+      duration="3"
+      decimals="2"
+      separator=","
+      prefix="$"
+      suffix="美元"
+    ></yd-countup>
+    <yd-backtop></yd-backtop>
+    <yd-tabbar class="foo">
+      <yd-tabbar-item title="首页" link="#">
         <yd-icon name="home" slot="icon" size="0.54rem"></yd-icon>
       </yd-tabbar-item>
       <yd-tabbar-item title="购物车" link="#" active>
@@ -46,13 +25,47 @@
         <yd-icon name="ucenter-outline" slot="icon" size="0.54rem"></yd-icon>
       </yd-tabbar-item>
     </yd-tabbar>
+    <yd-button size="large" type="primary" @click.native="show1 = true" >打开</yd-button>
+
+    <yd-keyboard v-model="show1" :callback="done1" ref="keyboardDemo1" title="阿朋贷安全键盘" ></yd-keyboard>
+    <yd-rollnotice autoplay="2000" >
+      <yd-rollnotice-item v-for="item in list" :key="item.id"><span style="color:#F00;"> 荐 </span>{{item.title}}</yd-rollnotice-item>
+    </yd-rollnotice>
   </div>
 </template>
 
 <script type="text/babel">
+  import Vue from 'vue';
+  import {ActionSheet} from 'vue-ydui/dist/lib.rem/actionsheet';
+  import {Button, ButtonGroup} from 'vue-ydui/dist/lib.rem/button';
+  import {CountUp} from 'vue-ydui/dist/lib.rem/countup';
+  import {BackTop} from 'vue-ydui/dist/lib.rem/backtop';
+  import {TabBar, TabBarItem} from 'vue-ydui/dist/lib.rem/tabbar';
+  import {Icons} from 'vue-ydui/dist/lib.rem/icons';
+  import { Confirm, Alert, Toast, Notify, Loading } from 'vue-ydui/dist/lib.rem/dialog';
+  import {KeyBoard} from 'vue-ydui/dist/lib.rem/keyboard';
+  import {RollNotice, RollNoticeItem} from 'vue-ydui/dist/lib.rem/rollnotice';
+  Vue.component(Button.name, Button);
+  Vue.component(ButtonGroup.name, ButtonGroup);
+  Vue.component(CountUp.name, CountUp);
+  Vue.component(BackTop.name, BackTop);
+  Vue.component(TabBar.name, TabBar);
+  Vue.component(TabBarItem.name, TabBarItem);
+  Vue.component(Icons.name, Icons);
+  Vue.component(KeyBoard.name, KeyBoard);
+  Vue.component(RollNotice.name, RollNotice);
+  Vue.component(RollNoticeItem.name, RollNoticeItem);
+  Vue.prototype.$dialog = {
+    confirm: Confirm,
+    alert: Alert,
+    toast: Toast,
+    notify: Notify,
+    loading: Loading,
+  };
   export default {
     data() {
       return {
+        show1: false,
         list: [
           {img: "//img1.shikee.com/try/2016/06/23/14381920926024616259.jpg", title: "标题111标题标题标题标题", price: 156.23, w_price: 89.36},
           {img: "//img1.shikee.com/try/2016/06/21/10172020923917672923.jpg", title: "标题222标题标题标题标题", price: 256.23, w_price: 89.36},
@@ -66,11 +79,14 @@
         datetime0: ''
       }
     },
-
+    computed:{
+      teststore:function () {
+        return this.$store.state.todos
+      }
+    },
     methods:{
-      changtheme(){
-          this.theme = 5;
-          alert(5)
+      aaa(){
+        alert(1)
       },
       done1(val) {
         console.log('输入的密码是：' + val);
@@ -81,11 +97,29 @@
           this.$refs.keyboardDemo1.$emit('ydui.keyboard.error', '对不起，您的支付密码不正确，请重新输入。');
           this.$dialog.loading.close();
         }, 2000);
+      },
+      changtheme(){
+        var that = this;
+        this.$ajax({
+            method:'get',
+            url:'api/activity/draw'
+          }).then(function (data) {
+          console.log(data);
+          that.$dialog.confirm({
+              title: data.data.code,
+              mes: data.data.msg,
+              opts: () => {
+                that.$dialog.toast({mes: '你点了确定', timeout: 1000});
+              }
+            });
+          }).catch(function (err) {
+            alert(err)
+          })
       }
     }
   }
 </script>
-<style scoped>
+<style scoped rel="stylesheet/scss" lang="scss">
 .foot{
   background-color: red;
 

@@ -3,17 +3,25 @@
 import Vue from 'vue'
 import router from './router'
 import store from './store'
-import './config/rem'
+
 import FastClick from 'fastclick'
-import YDUI from 'vue-ydui';
-Vue.use(YDUI);
-import 'vue-ydui/dist/ydui.rem.css';
-/* 使用px：import 'vue-ydui/dist/ydui.px.css'; */
-if ('addEventListener' in document) {
-  document.addEventListener('DOMContentLoaded', function() {
-    FastClick.attach(document.body);
-  }, false);
-}
+import axios from 'axios'
+import './config/rem'
+import 'vue-ydui/dist/ydui.base.css'
+
+// import YDUI from 'vue-ydui';
+// import 'vue-ydui/dist/ydui.rem.css';
+// /* 使用px：import 'vue-ydui/dist/ydui.px.css'; */
+// Vue.use(YDUI);
+
+
+// if ('addEventListener' in document) {
+//   document.addEventListener('DOMContentLoaded', function() {
+//     FastClick.attach(document.body);
+//   }, false);
+// }
+FastClick.attach(document.body)
+Vue.prototype.$ajax = axios
 
 Vue.config.productionTip = false
 

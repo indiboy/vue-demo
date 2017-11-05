@@ -13,6 +13,7 @@ const head = r => require.ensure([], () => r(require('@/components/header/head')
 const foot = r => require.ensure([], () => r(require('@/components/footer/foot')), 'chunkname3')
 const HelloWorld = r => require.ensure([], () => r(require('@/components/HelloWorld')), 'chunkname4')
 const test = r => require.ensure([], () => r(require('@/page/test')), 'test')
+const test2 = r => require.ensure([], () => r(require('@/page/test2')), 'test2')
 
 Vue.use(Router)
 
@@ -45,6 +46,12 @@ export default new Router({
       path: '/test',
       name: 'test',
       component: test
+
+    },
+    {
+      path: '/test2',
+      name: 'test2',
+      component: test2
 
     }
   ]
