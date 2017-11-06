@@ -6,8 +6,10 @@ import store from './store'
 
 import FastClick from 'fastclick'
 import axios from 'axios'
-// import './config/rem'
 import 'vue-ydui/dist/ydui.base.css'
+
+import './config/rem'
+
 
 // import YDUI from 'vue-ydui';
 // import 'vue-ydui/dist/ydui.rem.css';

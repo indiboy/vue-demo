@@ -9,6 +9,7 @@
     suffix="美元"
     class="spannum"
   ></yd-countup>
+  <p class="p"></p>
 </div>
 </template>
 
@@ -27,5 +28,9 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss" rel="stylesheet/scss">
-
+.p{
+  width: 0.117rem;
+  height: 1rem;
+  background-color: teal;
+}
 </style>
