@@ -45,7 +45,7 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss" rel="stylesheet/scss">
-    @import '../../style/mixin';
+    @import '../../assets/style/mixin';
     #head_top{
         background-color: $blue;
         position: fixed;

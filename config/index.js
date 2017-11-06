@@ -34,9 +34,12 @@ module.exports = {
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
+    /*Access-Control-Allow-Origin*/
     proxyTable: {
       '/api': {
           target: 'https://www.apengdai.com',
+          // target: 'https://mk-2.apengdai.com',
+          // target: 'localhost:8088',
           changeOrigin: true,
           pathRewrite: {
             '^/api': '/'

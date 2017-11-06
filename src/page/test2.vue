@@ -1,11 +1,23 @@
 <template>
 <div>
-  22
+  <yd-countup
+    endnum="1200"
+    duration="3"
+    decimals="2"
+    separator=","
+    prefix="$"
+    suffix="美元"
+    class="spannum"
+  ></yd-countup>
 </div>
 </template>
 
 <script>
-    export default {
+  import Vue from 'vue';
+  import {CountUp} from 'vue-ydui/dist/lib.rem/countup';
+  Vue.component(CountUp.name, CountUp);
+
+  export default {
         data() {
             return {}
         }

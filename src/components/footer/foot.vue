@@ -75,7 +75,7 @@
 </script>
 
 <style lang="scss" scoped rel="stylesheet/scss">
-  @import '../../style/mixin';
+  @import '../../assets/style/mixin';
   #foot_guide{
       background-color: #fff;
       position: fixed;

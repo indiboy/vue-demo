@@ -1,0 +1,9 @@
+//用户详情
+{
+  "data": {
+    "type": "test",
+    "sex": "男"
+
+  },
+  "success": true
+}

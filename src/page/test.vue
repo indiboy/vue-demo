@@ -1,5 +1,5 @@
 <template>
-  <div>{{teststore[0].id}}
+  <div>
     <yd-button type="primary">primary</yd-button>
     <yd-button type="danger">danger</yd-button>
     <yd-button type="warning">warning</yd-button>
@@ -12,6 +12,7 @@
       separator=","
       prefix="$"
       suffix="美元"
+      class="spannum"
     ></yd-countup>
     <yd-backtop></yd-backtop>
     <yd-tabbar class="foo">
@@ -31,6 +32,7 @@
     <yd-rollnotice autoplay="2000" >
       <yd-rollnotice-item v-for="item in list" :key="item.id"><span style="color:#F00;"> 荐 </span>{{item.title}}</yd-rollnotice-item>
     </yd-rollnotice>
+    {{teststore[0].id}}
   </div>
 </template>
 
@@ -102,7 +104,8 @@
         var that = this;
         this.$ajax({
             method:'get',
-            url:'api/activity/draw'
+            url:'/api/activity/draw'
+//            url:'/static/data/test.json'
           }).then(function (data) {
           console.log(data);
           that.$dialog.confirm({
@@ -119,17 +122,20 @@
     }
   }
 </script>
-<style scoped rel="stylesheet/scss" lang="scss">
+<style  rel="stylesheet/scss" lang="scss">
 .foot{
   background-color: red;
 
 }
-  .ooo{
-    height: 2rem;
+  .spannum{
+    height: 1rem;
+    line-height: 1rem;
+    display: block;
     width: 80%;
     margin: 0 auto;
     border-radius: 10rem;
     overflow: hidden;
-    background-color: red;
+    background-color: tan;
+    text-align: center;
   }
 </style>
