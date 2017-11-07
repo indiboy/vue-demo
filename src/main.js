@@ -5,7 +5,8 @@ import router from './router'
 import store from './store'
 
 import FastClick from 'fastclick'
-import axios from 'axios'
+// import axios from 'axios'
+import request from './config/api'
 import 'vue-ydui/dist/ydui.base.css'
 
 import './config/rem'
@@ -23,7 +24,7 @@ import './config/rem'
 //   }, false);
 // }
 FastClick.attach(document.body)
-Vue.prototype.$ajax = axios
+Vue.prototype.$ajax = request
 
 Vue.config.productionTip = false
 

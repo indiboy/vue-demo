@@ -102,21 +102,19 @@
       },
       changtheme(){
         var that = this;
-        this.$ajax({
-            method:'get',
-            url:'/api/activity/draw'
-//            url:'/static/data/test.json'
-          }).then(function (data) {
+        this.$ajax.get('/activity/draw'/*,{
+            test:'test'
+        }*/).then(function (data) {
           console.log(data);
           that.$dialog.confirm({
-              title: data.data.code,
-              mes: data.data.msg,
+              title: data.code,
+              mes: data.msg,
               opts: () => {
                 that.$dialog.toast({mes: '你点了确定', timeout: 1000});
               }
             });
           }).catch(function (err) {
-            alert(err)
+            alert("err66"+err)
           })
       }
     }
