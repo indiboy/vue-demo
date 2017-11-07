@@ -81,6 +81,10 @@
         datetime0: ''
       }
     },
+    meta:[
+      {name: 'application-name', content: 'Name of my application'},
+      { name: 'description', content: 'A description of the page', id: 'desc' }
+    ],
     computed:{
       teststore:function () {
         return this.$store.state.todos

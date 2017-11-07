@@ -19,11 +19,21 @@
   Vue.component(CountUp.name, CountUp);
 
   export default {
-        data() {
-            return {}
-        }
+      data() {
+          return {}
+      },
+      head:{
+        title: {
+          inner: 'test2'
+        },
+        meta:[
+          {name: 'application-name', content: 'Name of my application'},
+          { name: 'description', content: 'A description of the page', id: 'desc' }
+        ]
+      }
 
-    }
+
+  }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
