@@ -8,10 +8,11 @@ import FastClick from 'fastclick'
 // import axios from 'axios'
 import request from './config/api'
 import 'vue-ydui/dist/ydui.base.css'
+import VueHead from 'vue-head'
 
 import './config/rem'
 
-
+Vue.config.productionTip = false
 // import YDUI from 'vue-ydui';
 // import 'vue-ydui/dist/ydui.rem.css';
 // /* 使用px：import 'vue-ydui/dist/ydui.px.css'; */
@@ -25,8 +26,8 @@ import './config/rem'
 // }
 FastClick.attach(document.body)
 Vue.prototype.$ajax = request
+Vue.use(VueHead)
 
-Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
