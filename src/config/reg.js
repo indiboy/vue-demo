@@ -5,6 +5,6 @@
 export default {
   userName:'',
   userPwd:'',
-  userEmail:'',
+  userEmail:'//',
   userTel:'',
 }
