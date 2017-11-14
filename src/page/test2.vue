@@ -9,18 +9,23 @@
     suffix="美元"
     class="spannum"
   ></yd-countup>
-  <p class="p"></p>
+  <p class="p" @click="showtip()"></p>
+  <tips-t :tipstext=t v-if="show"></tips-t>
 </div>
 </template>
 
 <script>
   import Vue from 'vue';
   import {CountUp} from 'vue-ydui/dist/lib.rem/countup';
+  import tipsT from '../components/common/tips.vue';
   Vue.component(CountUp.name, CountUp);
 
   export default {
       data() {
-          return {}
+          return {
+            t:'ddjdjjdj',
+            show:false
+          }
       },
       head:{
         title: {
@@ -30,7 +35,15 @@
           {name: 'application-name', content: 'Name of my application'},
           { name: 'description', content: 'A description of the page', id: 'desc' }
         ]
+      },
+      components:{
+        tipsT
+      },
+    methods:{
+      showtip(){
+        this.show=!this.show
       }
+    }
 
 
   }

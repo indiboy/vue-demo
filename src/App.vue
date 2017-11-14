@@ -1,13 +1,13 @@
 <template>
-    <div>app{{count555}}{{console}}
+    <div>
         <transition name="router-fade" mode="out-in">
             <keep-alive>
-                <router-view v-if="$route.meta.keepAlive">11</router-view>
+                <router-view v-if="$route.meta.keepAlive"></router-view>
             </keep-alive>
         </transition>
         <transition name="router-fade" mode="out-in">
             <keep-alive>
-                <router-view v-if="!$route.meta.keepAlive">22</router-view>
+                <router-view v-if="!$route.meta.keepAlive"></router-view>
             </keep-alive>
         </transition>
         <img src="./assets/logo.png">
@@ -40,9 +40,7 @@
 //                    return state.count
 //                }
 //            }),
-            console(){
-                return this.count
-            }
+
 
         }
     }
