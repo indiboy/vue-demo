@@ -4,8 +4,10 @@
 import md5 from 'js-md5'
 const sessionKey = '689d3783957d65d57229ba3dc70a20fb'
 
-export function apdmd5(arr){
+export default {
+  apdmd5 (arr) {
     var arr = arr || [];
-    var str =  arr.join('')+sessionKey;
+    var str = arr.join('') + sessionKey;
     return md5(str);
+  }
 }

@@ -5,7 +5,6 @@ import router from './router'
 import store from './store'
 
 import FastClick from 'fastclick'
-// import axios from 'axios'
 import request from './config/api'
 import 'vue-ydui/dist/ydui.base.css'
 import VueHead from 'vue-head'
@@ -13,26 +12,14 @@ import VueHead from 'vue-head'
 import './config/rem'
 
 Vue.config.productionTip = false
-// import YDUI from 'vue-ydui';
-// import 'vue-ydui/dist/ydui.rem.css';
-// /* 使用px：import 'vue-ydui/dist/ydui.px.css'; */
-// Vue.use(YDUI);
 
 
-// if ('addEventListener' in document) {
-//   document.addEventListener('DOMContentLoaded', function() {
-//     FastClick.attach(document.body);
-//   }, false);
-// }
 FastClick.attach(document.body)
 Vue.prototype.$ajax = request
 Vue.use(VueHead)
 
 
-/* eslint-disable no-new */
 new Vue({
   router,
   store,
-  // template: '<App/>',
-  // components: { App }
 }).$mount('#app')
