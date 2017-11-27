@@ -20,11 +20,11 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-      {
+      /*{
         path: '/head',
         name: 'head',
         component: head
-      },
+      },*/
       {
         path: '/foot',
         name: 'foot',
