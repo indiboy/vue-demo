@@ -14,6 +14,7 @@ const foot = r => require.ensure([], () => r(require('@/components/footer/foot')
 const HelloWorld = r => require.ensure([], () => r(require('@/components/HelloWorld')), 'chunkname4')
 const test = r => require.ensure([], () => r(require('@/page/test')), 'test')
 const test2 = r => require.ensure([], () => r(require('@/page/test2')), 'test2')
+const md5 = r => require.ensure([], () => r(require('@/page/md5')), 'nd5')
 
 Vue.use(Router)
 
@@ -52,6 +53,12 @@ export default new Router({
       path: '/test2',
       name: 'test2',
       component: test2
+
+    },
+    {
+      path: '/md5',
+      name: 'md5',
+      component: md5
 
     }
   ]
