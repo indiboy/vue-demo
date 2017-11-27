@@ -3,9 +3,9 @@
  */
 import Vue from 'vue'
 import Vuex from 'vuex'
-// import mutations from './mutations'
-// import actions from './action'
-// import getters from './getters'
+import mutations from './mutations'
+import actions from './actions'
+import getters from './getters'
 
 
 Vue.use(Vuex)
@@ -45,11 +45,7 @@ const state = {
 
 export default new Vuex.Store({
   state,
-  getters:{
-    doneTodos: function (state) {
-        return state.todos.filter(todo => todo.done)
-    }
-  }
-  // actions,
-  // mutations,
+  getters,
+  actions,
+  mutations,
 })

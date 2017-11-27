@@ -10,10 +10,11 @@ import HelloWorld from '@/components/HelloWorld'*/
 /*按需加载*/
 const head = r => require.ensure([], () => r(require('@/components/header/head')), 'chunkname2')
 const foot = r => require.ensure([], () => r(require('@/components/footer/foot')), 'chunkname3')
-const Hello = r => require.ensure([], () => r(require('@/components/HelloWorld')), 'chunkname4')
-const test = r => require.ensure([], () => r(require('@/page/test')), 'test')
-const test2 = r => require.ensure([], () => r(require('@/page/test2')), 'test2')
-const md5 = r => require.ensure([], () => r(require('@/page/md5')), 'nd5')
+const hello = r => require.ensure([], () => r(require('@/components/HelloWorld')), 'chunkname4')
+const md5 = r => require.ensure([], () => r(require('@/page/md5')), 'md5')
+
+/*test部分*/
+const render = r => require.ensure([], () => r(require('@/page/test/render')), 'render')
 
 Vue.use(Router)
 
@@ -38,23 +39,18 @@ export default new Router({
           {
             path: '/hello/:id',
             name: 'hello',
-            component: Hello,
+            component: hello,
             props: true
-          },
-          {
-            path: '/test',
-            name: 'test',
-            component: test
-          },
-          {
-            path: '/test2',
-            name: 'test2',
-            component: test2
           },
           {
             path: '/md5',
             name: 'md5',
             component: md5
+          },
+          {
+            path: '/test/render',
+            name: 'render',
+            component: render
           }
       ]
     },
