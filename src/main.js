@@ -19,7 +19,9 @@ Vue.prototype.$ajax = request
 Vue.use(VueHead)
 
 
-new Vue({
+var vm = new Vue({
   router,
   store,
+
 }).$mount('#app')
+

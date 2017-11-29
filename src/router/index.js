@@ -15,6 +15,9 @@ const md5 = r => require.ensure([], () => r(require('@/page/md5')), 'md5')
 
 /*test部分*/
 const render = r => require.ensure([], () => r(require('@/page/test/render')), 'render')
+const demo1 = r => require.ensure([], () => r(require('@/page/test/demo1')), 'demo1')
+const demo2 = r => require.ensure([], () => r(require('@/page/test/demo2')), 'demo1')
+const demo3 = r => require.ensure([], () => r(require('@/page/test/demo3')), 'demo1')
 
 Vue.use(Router)
 
@@ -51,7 +54,23 @@ export default new Router({
             path: '/test/render',
             name: 'render',
             component: render
-          }
+          },
+          {
+            path: '/test/demo1',
+            name: 'demo1',
+            component: demo1
+          },
+          {
+            path: '/test/demo2',
+            name: 'demo2',
+            component: demo2
+          },
+        {
+          path: '/test/demo3',
+          name: 'demo3',
+          component: demo3
+        }
+
       ]
     },
 

@@ -3,19 +3,13 @@
 </template>
 
 <script>
-    export default {
-        name: '',
-        data () {
-            return {
-                a:'a',
-                b:'b'
-            }
-        },
-        render:function (createElement) {
-            return createElement('h1', this.a)
-        }
-
+  export default {
+    name: '',
+    data () {
+      return {}
     }
+
+  }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
