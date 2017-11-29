@@ -5,11 +5,11 @@ import router from './router'
 import store from './store'
 
 import FastClick from 'fastclick'
-import request from './config/api'
+import request from './service/api'
 import 'vue-ydui/dist/ydui.base.css'
 import VueHead from 'vue-head'
 
-import './config/rem'
+import './service/rem'
 
 Vue.config.productionTip = false
 

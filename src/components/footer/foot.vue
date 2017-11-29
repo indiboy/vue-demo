@@ -83,9 +83,9 @@
       left: 0;
       right: 0;
       bottom: 0;
-      @include wh(100%, 1.95rem);
+      @include wh(100%, 1.95*0.4rem);
       display: flex;
-      box-shadow: 0 -0.026667rem 0.053333rem rgba(0,0,0,.1);
+      box-shadow: 0 -0.026667*0.4rem 0.053333*0.4rem rgba(0,0,0,.1);
   }
   .guide_item{
       flex: 1;
@@ -94,13 +94,13 @@
       flex-direction: column;
       align-items: center;
       .icon_style{
-          @include wh(.8rem, .8rem);
-          margin-bottom: .2rem;
-          margin-top: .3rem;
+          @include wh(.8*0.4rem, .8*0.4rem);
+          margin-bottom: .2*0.4rem;
+          margin-top: .3*0.4rem;
           fill: red;
       }
       span{
-          @include sc(.45rem, #666);
+          @include sc(.45*0.4rem, #666);
       }
   }
 

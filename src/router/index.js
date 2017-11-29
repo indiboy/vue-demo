@@ -8,9 +8,8 @@ import foot from '@/components/footer/foot'
 import HelloWorld from '@/components/HelloWorld'*/
 
 /*按需加载*/
-const head = r => require.ensure([], () => r(require('@/components/header/head')), 'chunkname2')
-const foot = r => require.ensure([], () => r(require('@/components/footer/foot')), 'chunkname3')
-const hello = r => require.ensure([], () => r(require('@/components/HelloWorld')), 'chunkname4')
+const index = r => require.ensure([], () => r(require('@/page/index')), 'index')
+const hello = r => require.ensure([], () => r(require('@/page/HelloWorld')), 'chunkname4')
 const md5 = r => require.ensure([], () => r(require('@/page/md5')), 'md5')
 
 /*test部分*/
@@ -18,6 +17,7 @@ const render = r => require.ensure([], () => r(require('@/page/test/render')), '
 const demo1 = r => require.ensure([], () => r(require('@/page/test/demo1')), 'demo1')
 const demo2 = r => require.ensure([], () => r(require('@/page/test/demo2')), 'demo1')
 const demo3 = r => require.ensure([], () => r(require('@/page/test/demo3')), 'demo1')
+const test = r => require.ensure([], () => r(require('@/page/test/test')), 'test')
 
 Vue.use(Router)
 
@@ -29,15 +29,10 @@ export default new Router({
       component: App,
       children:[   //子组件在App中的router-view展示
           {
-            path: '/head',
-            name: 'head',
-            component: head,
+            path: '/index',
+            name: 'index',
+            component: index,
             meta:{keepAlive:true},/*改组件是否需要缓存，一般为静态页面*/
-          },
-          {
-            path: '/foot',
-            name: 'foot',
-            component: foot
           },
           {
             path: '/hello/:id',
@@ -49,6 +44,11 @@ export default new Router({
             path: '/md5',
             name: 'md5',
             component: md5
+          },
+          {
+            path: '/test',
+            name: 'test',
+            component: test
           },
           {
             path: '/test/render',

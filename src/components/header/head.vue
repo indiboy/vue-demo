@@ -52,17 +52,17 @@
         z-index: 100;
         left: 0;
         top: 0;
-        @include wh(100%,1.95rem);
+        @include wh(100%,1.95*0.4rem);
     }
     .head_goback{
-        left: 0.4rem;
-        @include wh(0.6rem,1rem);
+        left: 0.4*0.4rem;
+        @include wh(0.6*0.4rem,1*0.4rem);
         @include ct;
-        margin-left: 0.4rem;
+        margin-left: 0.4*0.4rem;
     }
     .head_login{
-        right: 0.55rem;
-        @include sc(0.65rem,#fff);
+        right: 0.55*0.4rem;
+        @include sc(0.65*0.4rem,#fff);
         @include ct;
         text-decoration: none;
         .login_span{
@@ -70,7 +70,7 @@
           }
           .user_avatar{
               fill: #fff;
-              @include wh(.8rem, .8rem);
+              @include wh(.8*0.4rem, .8*0.4rem);
           }
     }
     .title_head{
@@ -79,7 +79,7 @@
         color: #fff;
         text-align: center;
         .title_text{
-            @include sc(0.8rem, #fff);
+            @include sc(0.8*0.4rem, #fff);
             text-align: center;
             font-weight: bold;
         }
