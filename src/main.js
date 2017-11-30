@@ -6,6 +6,7 @@ import store from './store'
 
 import FastClick from 'fastclick'
 import request from './service/api'
+import 'vue-ydui/dist/ydui.flexible'
 import 'vue-ydui/dist/ydui.base.css'
 import VueHead from 'vue-head'
 

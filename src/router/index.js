@@ -18,6 +18,7 @@ const demo1 = r => require.ensure([], () => r(require('@/page/test/demo1')), 'de
 const demo2 = r => require.ensure([], () => r(require('@/page/test/demo2')), 'demo1')
 const demo3 = r => require.ensure([], () => r(require('@/page/test/demo3')), 'demo1')
 const test = r => require.ensure([], () => r(require('@/page/test/test')), 'test')
+const plugin = r => require.ensure([], () => r(require('@/page/test/plugin')), 'test')
 
 Vue.use(Router)
 
@@ -69,7 +70,12 @@ export default new Router({
           path: '/test/demo3',
           name: 'demo3',
           component: demo3
-        }
+        },
+        {
+          path: '/test/plugin',
+          name: 'plugin',
+          component: plugin
+        },
 
       ]
     },
