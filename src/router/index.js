@@ -11,6 +11,7 @@ import HelloWorld from '@/components/HelloWorld'*/
 const index = r => require.ensure([], () => r(require('@/page/index')), 'index')
 const hello = r => require.ensure([], () => r(require('@/page/HelloWorld')), 'chunkname4')
 const md5 = r => require.ensure([], () => r(require('@/page/md5')), 'md5')
+const yd = r => require.ensure([], () => r(require('@/page/yd')), 'yd')
 
 /*test部分*/
 const render = r => require.ensure([], () => r(require('@/page/test/render')), 'render')
@@ -35,6 +36,11 @@ export default new Router({
             component: index,
             meta:{keepAlive:true},/*改组件是否需要缓存，一般为静态页面*/
           },
+        {
+          path: '/yd',
+          name: 'yd',
+          component: yd,
+        },
           {
             path: '/hello/:id',
             name: 'hello',
