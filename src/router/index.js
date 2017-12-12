@@ -27,9 +27,13 @@ export default new Router({
   routes: [
     {
       path: '/', //顶级路由匹配到App组件在inde.html中的router-view展示，其余组件作为App的子组件展示
-      name: 'app',
       component: App,
       children:[   //子组件在App中的router-view展示
+          {
+              path: '',/*如果是空的就重定向到index页面*/
+              name: 'index',
+              redirect:'/index',
+          },
           {
             path: '/index',
             name: 'index',

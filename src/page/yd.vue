@@ -2,7 +2,7 @@
   <div>
     <yd-cell-group>
       <yd-cell-item>
-        <yd-icon slot="icon" name="phone3" size=".45rem"></yd-icon>
+        <yd-icon55 slot="icon" name="phone3" size=".45rem"></yd-icon55>
         <input type="text" slot="right" placeholder="请输入手机号码">
 
         <!-- ↓↓关键代码是这里↓↓ -->

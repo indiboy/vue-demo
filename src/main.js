@@ -19,6 +19,7 @@ Vue.prototype.$ajax = request
 Vue.use(VueHead)
 
 
+
 var vm = new Vue({
   router,
   store,
