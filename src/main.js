@@ -10,15 +10,18 @@ import request from './service/api'
 import './service/rem'
 import 'vue-ydui/dist/ydui.base.css'
 import VueHead from 'vue-head'
-
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 Vue.config.productionTip = false
 
-
+import YDUI from 'vue-ydui';
+import 'vue-ydui/dist/ydui.rem.css';
+Vue.use(YDUI);
 FastClick.attach(document.body)
 Vue.prototype.$ajax = request
 Vue.use(VueHead)
 
-
+Vue.use(ElementUI)
 
 var vm = new Vue({
   router,

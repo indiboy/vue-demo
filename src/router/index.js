@@ -12,6 +12,7 @@ const index = r => require.ensure([], () => r(require('@/page/index')), 'index')
 const hello = r => require.ensure([], () => r(require('@/page/HelloWorld')), 'chunkname4')
 const md5 = r => require.ensure([], () => r(require('@/page/md5')), 'md5')
 const yd = r => require.ensure([], () => r(require('@/page/yd')), 'yd')
+const ele = r => require.ensure([], () => r(require('@/page/ele')), 'ele')
 
 /*test部分*/
 const render = r => require.ensure([], () => r(require('@/page/test/render')), 'render')
@@ -45,6 +46,11 @@ export default new Router({
           name: 'yd',
           component: yd,
         },
+          {
+              path: '/ele',
+              name: 'ele',
+              component: ele,
+          },
           {
             path: '/hello/:id',
             name: 'hello',
