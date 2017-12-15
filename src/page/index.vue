@@ -50,7 +50,6 @@
 //            this.showAlert.at = false;
 //            Vue.set(this.showAlert,'at',false)
               Vue.delete(this.showAlert,'at')
-              alert(Vue.version)
 
           }
       },
