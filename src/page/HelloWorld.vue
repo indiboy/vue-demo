@@ -17,6 +17,12 @@
       <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul>
+    <div>
+      <input type="text" v-model="ketou">
+      <p>{{ketou}}</p>
+      <label for="user">用户输入：</label><input type="text" id="user" v-model="user">
+      <button @click="check">alert</button>
+    </div>
   </div>
 </template>
 
@@ -26,10 +32,28 @@ export default {
 
   data () {
     return {
+      ketou:1130,
+      user:0,
       msg: 'Welcome to Your Vue.js App'
     }
   },
-  props:['id']
+  props:['id'],
+  methods:{
+      check(){
+          if (this.user > this.ketou) {
+              alert('最大可投为' + this.ketou + '多了')
+          } else {
+              if (this.user>=1000 && this.ketou - this.user >= 100 && this.user % 50 == 0) {
+                  alert('xingle')
+              }else if(this.user>=1000 && this.ketou - this.user <100){
+                  alert('最大可投为' + this.ketou + '不能给我剩下')
+              }else {
+                  alert(11)
+              }
+          }
+
+      }
+  }
 }
 </script>
 
