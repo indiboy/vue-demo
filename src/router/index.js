@@ -9,10 +9,9 @@ import HelloWorld from '@/components/HelloWorld'*/
 
 /*按需加载*/
 const index = r => require.ensure([], () => r(require('@/page/index')), 'index')
-const hello = r => require.ensure([], () => r(require('@/page/HelloWorld')), 'chunkname4')
-const md5 = r => require.ensure([], () => r(require('@/page/md5')), 'md5')
-const yd = r => require.ensure([], () => r(require('@/page/yd')), 'yd')
-const ele = r => require.ensure([], () => r(require('@/page/ele')), 'ele')
+const hello = r => require.ensure([], () => r(require('@/page/HelloWorld')), 'hello')
+const home = r => require.ensure([], () => r(require('@/page/home/home')), 'home')
+
 
 /*test部分*/
 const render = r => require.ensure([], () => r(require('@/page/test/render')), 'render')
@@ -21,6 +20,9 @@ const demo2 = r => require.ensure([], () => r(require('@/page/test/demo2')), 'de
 const demo3 = r => require.ensure([], () => r(require('@/page/test/demo3')), 'demo1')
 const test = r => require.ensure([], () => r(require('@/page/test/test')), 'test')
 const plugin = r => require.ensure([], () => r(require('@/page/test/plugin')), 'test')
+const md5 = r => require.ensure([], () => r(require('@/page/test/md5')), 'md5')
+const yd = r => require.ensure([], () => r(require('@/page/test/yd')), 'yd')
+const ele = r => require.ensure([], () => r(require('@/page/test/ele')), 'ele')
 
 Vue.use(Router)
 
@@ -41,13 +43,19 @@ export default new Router({
             component: index,
             meta:{keepAlive:true},/*改组件是否需要缓存，一般为静态页面*/
           },
-        {
-          path: '/yd',
-          name: 'yd',
-          component: yd,
-        },
           {
-              path: '/ele',
+              path: '/home',
+              name: 'home',
+              component: home,
+              meta:{keepAlive:true},
+          },
+          {
+            path: '/test/yd',
+            name: 'yd',
+            component: yd,
+          },
+          {
+              path: '/test/ele',
               name: 'ele',
               component: ele,
           },

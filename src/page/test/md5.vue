@@ -8,7 +8,7 @@
 </template>
 
 <script>
-  import apdmd5 from '../service/md5'
+  import apdmd5 from '../../service/md5'
   console.log(apdmd5);
 
   export default {

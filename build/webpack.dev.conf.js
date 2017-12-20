@@ -11,6 +11,9 @@ const baseWebpackConfig = require('./webpack.base.conf')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 
+//开发环境配置可视化的插件管理
+let BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 // add hot-reload related code to entry chunks
 // 将 Hol-reload 相对路径添加到 webpack.base.conf 的 对应 entry 前
 Object.keys(baseWebpackConfig.entry).forEach(function (name) {
@@ -26,6 +29,8 @@ module.exports = merge(baseWebpackConfig, {
   // 使用 #eval-source-map 模式作为开发工具，此配置可参考 DDFE 往期文章详细了解
   devtool: '#cheap-module-eval-source-map',
   plugins: [
+    //开发环境配置可视化的插件管理
+    new BundleAnalyzerPlugin(),
     // definePlugin 接收字符串插入到代码当中, 所以你需要的话可以写上 JS 的字符串
     new webpack.DefinePlugin({
       'process.env': config.dev.env
