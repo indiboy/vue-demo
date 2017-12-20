@@ -1,54 +1,67 @@
 <template>
-    <div class="loading">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+<div class="laoding_container">
+    <div class="load_img" :style="{backgroundPositionY: -(positionY%7)*2.5 + 'rem'}"></div>
+    <svg class="load_ellipse" xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <ellipse cx="26" cy="10" rx="26" ry="10" style="fill:#ddd;stroke:none;"></ellipse>
+    </svg>
+</div>
 </template>
 
 <script>
     export default {
-        name: "loading"
+        name: '',
+        data () {
+            return {
+                positionY: 0,
+                timer: null,
+            }
+        },
+        mounted(){
+            this.timer = setInterval(() => {
+                this.positionY ++;
+            }, 600)
+        },
+        beforeDestroy(){
+            clearInterval(this.timer);
+        }
     }
 </script>
 
-<style scoped rel="stylesheet/scss" lang="scss">
-  .loading{
-    width: 2rem;
-    height: 1rem;
-    background-color: rgba(0,0,0,0.2);
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    display: flex;
-    justify-content: space-around;
-    align-items:center;
-    span{
-      display: inline-block;
-      width: 0.1rem;
-      height: 0.1rem;
-      background-color: #fff;
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped lang='scss' rel="stylesheet/scss">
+    @import "../../assets/style/mixin";
+    @keyframes load{
+        0%   {transform: translateY(0px);}
+        50%  {transform: translateY(-50px);}
+        100% {transform: translateY(0px);}
     }
-    span:nth-child(1){
-      animation: bgcolor 1s ease infinite;
+    @keyframes ellipse{
+        0%   {transform: scale(1);}
+        50%  {transform: scale(0.3);}
+        100% {transform: scale(1);}
     }
-    span:nth-child(2){
-      animation: bgcolor 1.5s ease infinite;
+    .laoding_container{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        @include wh(2.5rem, 2.5rem);
     }
-    span:nth-child(3){
-      animation: bgcolor 2s ease infinite;
+    .load_img{
+        @include wh(100%, 100%);
+        background: url(../../assets/images/icon_loading.png) no-repeat 0 0;
+        background-size: 2.5rem auto;
+        transform: translateY(0px);
+        animation: load .6s infinite ease-in-out;
+        position: relative;
+        z-index: 11;
     }
-    span:nth-child(4){
-      animation: bgcolor 2.5s ease infinite;
+    .load_ellipse{
+        position: absolute;
+        @include wh(2.6rem, 2rem);
+        top: 2.2rem;
+        left: 0.2rem;
+        z-index: 10;
+        animation: ellipse .6s infinite ease-in-out;
     }
-  }
-  @keyframes bgcolor {
-     0%{background-color: rgba(10,0,200,0.9)}
-     50%{background-color: rgba(100,10,60,0.5)}
-     100%{background-color: rgba(250,80,20,0.1)}
-  }
 </style>

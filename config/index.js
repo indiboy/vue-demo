@@ -39,7 +39,9 @@ module.exports = {
     /*Access-Control-Allow-Origin*/
     proxyTable: {
       '/api': {
-          target: 'https://www.apengdai.com',
+          // target: 'https://www.apengdai.com',
+          //饿了么数据接口地址
+          target: 'http://cangdu.org:8001',
           // target: 'https://mk-2.apengdai.com',
           // target: 'localhost:8088',
           changeOrigin: true,

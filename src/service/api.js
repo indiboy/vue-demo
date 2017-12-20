@@ -15,7 +15,7 @@ axios.interceptors.request.use(config => {
   // }
   // 开启loading动画
   // store.dispatch ('popup/loading/showLoading')
-  alert("request"+1)
+  // alert("request"+1)
   return config
 }, function (error) {
   // Do something with request error
@@ -27,7 +27,7 @@ axios.interceptors.response.use(response => {
   // Do something with response data
   // 关闭loading动画
   // store.dispatch('popup/loading/hideLoading')
-  alert("response"+2)
+  // alert("response"+2)
   return response.data
 
 }, function (error) {
