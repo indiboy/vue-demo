@@ -1,6 +1,6 @@
 // import store from '@/store'
 import axios from 'axios'
-// import qs from 'qs' axios发送的数据不是json格式，若需要json格式，添加此库
+import qs from 'qs' //axios发送的数据不是json格式，若需要json格式，添加此库
 
 import config from '../../config'
 

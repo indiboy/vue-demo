@@ -22,10 +22,7 @@ Vue.prototype.$ajax = request
 Vue.use(VueHead)
 
 Vue.use(ElementUI)
-router.beforeEach((to, from, next) => {
-  alert(11)
-  next()
-})
+
 var vm = new Vue({
   router,
   store,

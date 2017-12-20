@@ -3,6 +3,7 @@
     <head-top>
         <span slot="logo" class="head_logo" @click="reload">ele.me</span>
     </head-top>
+
     <nav class="city_nav">
         <div class="city_tip">
             <span>当前定位城市</span>
@@ -16,6 +17,7 @@
             </svg>
         </router-link>
     </nav>
+
     <section id="hot_city_container">
         <h4 class="city_title">热门城市</h4>
         <ul class="citylistul clear">
@@ -76,7 +78,6 @@
             //获取热门城市
             hotcity().then(res => {
                 this.hotcity = res;
-
             })
             // 获取当前城市
             cityGuess().then(res => {
@@ -122,7 +123,7 @@
                 @include sc(0.55*0.4rem, #666);
             }
             span:nth-of-type(2){
-                font-weight: 900;
+                font-weight: 700;
                 @include sc(0.475*0.4rem, #9f9f9f);
             }
         }
@@ -163,7 +164,6 @@
     }
     .city_title{
         color: #666;
-        font-weight: 400;
         text-indent: 0.45*0.4rem;
         border-top: 2px solid $blue;
         border-bottom: 1px solid $bc;
