@@ -16,16 +16,20 @@ Vue.config.productionTip = false
 
 import YDUI from 'vue-ydui';
 import 'vue-ydui/dist/ydui.rem.css';
+import loading from './components/common/loading'
 Vue.use(YDUI);
 FastClick.attach(document.body)
 Vue.prototype.$ajax = request
 Vue.use(VueHead)
 
 Vue.use(ElementUI)
-
+router.beforeEach((to, from, next) => {
+  alert(11)
+  next()
+})
 var vm = new Vue({
   router,
   store,
   // render: h => h(App)
-}).$mount('#app')
+}).$mount('#app' )
 

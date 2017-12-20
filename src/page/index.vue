@@ -6,6 +6,7 @@
     <input v-model="message" placeholder="edit me">
     <p>Message is: {{ message | kkk}}</p>
   <foot-btm></foot-btm>
+  <loading></loading>
 </div>
 </template>
 
@@ -13,6 +14,7 @@
   import headTop from '../components/header/head.vue'
   import footBtm from '../components/footer/foot.vue'
   import alertTips from '../components/common/tips.vue'
+  import loading from '../components/common/loading'
   import Vue from 'vue'
   Vue.filter('kkk',function (value) {
       value = value.toString()
@@ -35,7 +37,7 @@
           return {
               message:'',
               showAlert:{
-                  at:true
+                  at:false
               }
           }
       },
@@ -43,7 +45,8 @@
       components:{
           headTop,
           footBtm,
-          alertTips
+          alertTips,
+          loading
       },
       methods:{
           closeTip:function () {
