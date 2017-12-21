@@ -1,6 +1,6 @@
 <template>
 <div>
-    <head-top>
+    <head-top :go-back="true" signin-up='home'>
         <span slot="logo" class="head_logo" @click="reload">ele.me</span>
     </head-top>
 

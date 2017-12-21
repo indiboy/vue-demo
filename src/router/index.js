@@ -11,6 +11,7 @@ import HelloWorld from '@/components/HelloWorld'*/
 const index = r => require.ensure([], () => r(require('@/page/index')), 'index')
 const hello = r => require.ensure([], () => r(require('@/page/HelloWorld')), 'hello')
 const home = r => require.ensure([], () => r(require('@/page/home/home')), 'home')
+const city = r => require.ensure([], () => r(require('@/page/city/city')), 'city')
 
 
 /*test部分*/
@@ -47,7 +48,22 @@ export default new Router({
               path: '/home',
               name: 'home',
               component: home,
-              meta:{keepAlive:true},
+          },
+          {
+              path: '/city:cityid',
+              name: 'city',
+              component: city,
+          },
+          {
+              path: '/hello/:id',
+              name: 'hello',
+              component: hello,
+              props: true
+          },
+          {
+              path: '/test',
+              name: 'test',
+              component: test
           },
           {
             path: '/test/yd',
@@ -58,22 +74,6 @@ export default new Router({
               path: '/test/ele',
               name: 'ele',
               component: ele,
-          },
-          {
-            path: '/hello/:id',
-            name: 'hello',
-            component: hello,
-            props: true
-          },
-          {
-            path: '/md5',
-            name: 'md5',
-            component: md5
-          },
-          {
-            path: '/test',
-            name: 'test',
-            component: test
           },
           {
             path: '/test/render',
@@ -90,16 +90,16 @@ export default new Router({
             name: 'demo2',
             component: demo2
           },
-        {
-          path: '/test/demo3',
-          name: 'demo3',
-          component: demo3
-        },
-        {
-          path: '/test/plugin',
-          name: 'plugin',
-          component: plugin
-        },
+          {
+              path: '/test/demo3',
+              name: 'demo3',
+              component: demo3
+          },
+          {
+              path: '/test/plugin',
+              name: 'plugin',
+              component: plugin
+          },
 
       ]
     },

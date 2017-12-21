@@ -1,6 +1,6 @@
 <template>
 <div>
-    <head-top></head-top>
+    <head-top headTitle="index" goBack="true"></head-top>
     <alert-tips v-if="showAlert.at" alertText="tishidexiaoxi" @closeTip="closeTip"></alert-tips>
     <loading v-if="loading"></loading>
     <foot-btm></foot-btm>

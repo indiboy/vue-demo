@@ -28,19 +28,28 @@
 </template>
 
 <script>
-//    import {mapState, mapActions} from 'vuex'
+    import {mapState, mapActions} from 'vuex'
 
     export default {
         data () {
             return {
-                goBack:true,
-                signinUp:true,
-                headTitle:true,
-                userInfo:false
+
             }
         },
+        props:['signinUp', 'headTitle', 'goBack'],
         mounted(){
-
+            //获取用户信息
+            this.getUserInfo();
+        },
+        computed:{
+            ...mapState([
+                'userInfo'
+            ]),
+        },
+        methods:{
+            ...mapActions([
+                'getUserInfo'
+            ]),
         }
 
     }

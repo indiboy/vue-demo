@@ -12,11 +12,16 @@ Vue.use(Vuex)
 
 
 const state = {
-  todos: [
-    { id: 1, text: 'id1', done: false },
-    { id: 2, text: 'id2', done: true }
-  ],
-  name:'tyy'
+    /*test*/
+    todos: [
+      { id: 1, text: 'id1', done: false },
+      { id: 2, text: 'id2', done: true }
+    ],
+    name:'tyy',
+
+    /*******正式*********/
+    userInfo:null, //用户信息
+
 }
 
 export default new Vuex.Store({
