@@ -25,6 +25,18 @@ const md5 = r => require.ensure([], () => r(require('@/page/test/md5')), 'md5')
 const yd = r => require.ensure([], () => r(require('@/page/test/yd')), 'yd')
 const ele = r => require.ensure([], () => r(require('@/page/test/ele')), 'ele')
 
+/*test page*/
+/*const test = r => require.ensure([], () => r(require('@/page/test')), 'chunktst')
+const apitest = r => require.ensure([], () => r(require('@/page/aatest/api_test')), 'api_test')
+const titletest = r => require.ensure([], () => r(require('@/page/aatest/title_test')), 'title_test')
+const md5 = r => require.ensure([], () => r(require('@/page/aatest/md5_test')), 'md5_test')
+const alertt = r => require.ensure([], () => r(require('@/components/common/alertTip')), 'alertt')
+const kkk = r => require.ensure([], () => r(require('@/page/aatest/islogin')), 'islogin')
+const vuex = r => require.ensure([], () => r(require('@/page/aatest/vuex')), 'vuex')
+const vuex2 = r => require.ensure([], () => r(require('@/page/aatest/vuex2')), 'vuex2')
+const safe = r => require.ensure([], () => r(require('@/page/aatest/safe_test')), 'safe')
+const router = r => require.ensure([], () => r(require('@/page/aatest/router_test')), 'router')*/
+
 Vue.use(Router)
 
 export default new Router({
@@ -50,7 +62,7 @@ export default new Router({
               component: home,
           },
           {
-              path: '/city:cityid',
+              path: '/city/:cityid',
               name: 'city',
               component: city,
           },
@@ -103,6 +115,66 @@ export default new Router({
 
       ]
     },
+    /*  /!************************* test *******************!/
+
+      {
+          path: '/test/api',
+          name: 'apitest',
+          component: apitest
+
+      },
+      {
+          path: '/test/title',
+          name: 'titletest',
+          component: titletest
+
+      },
+      {
+          path: '/test/md5',
+          name: 'md5',
+          component: md5
+
+      },
+      {
+          path: '/test/al',
+          name: 'al',
+          component: alertt
+
+      },
+      {
+          path: '/test/kkk',
+          name: 'kkk',
+          component: kkk
+
+      },
+      {
+          path: '/test/vuex',
+          name: 'vuex',
+          component: vuex
+
+      },
+      {
+          path: '/test/vuex2',
+          name: 'vuex2',
+          component: vuex2
+
+      },
+      {
+          path: '/test/safe',
+          name: 'safe',
+          component: safe
+
+      },
+      {
+          path: '/test/router/:router555',
+          name: 'router',
+          component: router,
+          meta:{
+              meta:'meta'
+          }
+
+
+      }*/
 
 
 

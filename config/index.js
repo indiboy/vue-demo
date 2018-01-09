@@ -15,12 +15,14 @@ module.exports = {
     //assetsPublicPath: '/',
     //修改绝对路径为相对路径
     assetsPublicPath: './',
-    productionSourceMap: true,
+    /*关闭.map*/
+    productionSourceMap: false,
     // Gzip off by default as many popular static hosts such as
     // Surge or Netlify already gzip all static assets for you.
     // Before setting to `true`, make sure to:
     // npm install --save-dev compression-webpack-plugin
-    productionGzip: false,
+    /* 开启压缩  需要安装 compression-webpack-plugin*/
+    productionGzip: true,
     productionGzipExtensions: ['js', 'css'],
     // Run the build command with an extra argument to
     // View the bundle analyzer report after build finishes:
@@ -28,7 +30,8 @@ module.exports = {
     // Set to `true` or `false` to always turn it on or off
     bundleAnalyzerReport: process.env.npm_config_report,
     /*生产环境地址*/
-    httpUrl: 'https://mk-2.apengdai.com',
+    // httpUrl: 'https://mk-2.apengdai.com',
+    httpUrl: 'http://cangdu.org:8001',
   },
   dev: {
     env: require('./dev.env'),
@@ -43,7 +46,7 @@ module.exports = {
           //饿了么数据接口地址
           target: 'http://cangdu.org:8001',
           // target: 'https://mk-2.apengdai.com',
-          // target: 'localhost:8088',
+          // target: 'https://localhost:8088',
           changeOrigin: true,
           pathRewrite: {
             '^/api': '/'

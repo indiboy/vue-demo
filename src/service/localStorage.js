@@ -12,7 +12,7 @@ export const setStorage = function (name,content) {
     if(typeof content !== 'string'){
         content = JSON.stringify(content);
     }
-    windowlocalStorage.setItem(name,content);
+    window.localStorage.setItem(name,content);
 }
 /*删除缓存*/
 export const delStorage = function () {

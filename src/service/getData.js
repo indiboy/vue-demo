@@ -34,3 +34,12 @@ export const getUser = function () {
 export const currentcity = function (cityid) {
     return $ajax.get('/v1/cities/'+cityid)
 }
+
+/*获取搜索地址*/
+export const searchplace = function (cityid,value) {
+    return $ajax.get('/v1/pois/',{
+        type: 'search',
+        city_id: cityid,
+        keyword: value
+    })
+}

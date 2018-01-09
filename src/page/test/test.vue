@@ -51,5 +51,9 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss" rel="stylesheet/scss">
-
+  @import "../../assets/style/test";
+  $test:blue!default;
+  h1{
+      color: $test;
+  }
 </style>
