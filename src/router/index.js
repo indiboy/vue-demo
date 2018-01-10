@@ -25,6 +25,8 @@ const md5 = r => require.ensure([], () => r(require('@/page/test/md5')), 'md5')
 const yd = r => require.ensure([], () => r(require('@/page/test/yd')), 'yd')
 const ele = r => require.ensure([], () => r(require('@/page/test/ele')), 'ele')
 
+const hover = r => require.ensure([], () => r(require('@/page/hover')), 'hover')
+
 Vue.use(Router)
 
 export default new Router({
@@ -50,7 +52,7 @@ export default new Router({
               component: home,
           },
           {
-              path: '/city:cityid',
+              path: '/city/:cityid',
               name: 'city',
               component: city,
           },
@@ -100,6 +102,11 @@ export default new Router({
               name: 'plugin',
               component: plugin
           },
+        {
+          path: '/hover',
+          name: 'hover',
+          component: hover
+        }
 
       ]
     },
